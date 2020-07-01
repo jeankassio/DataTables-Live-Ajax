@@ -723,9 +723,10 @@
 
                 // Update to true if any changes were made - to redraw the table
                 var doDraw = false;
-
+				
+				
                 // If the rowId _does NOT exist_, then update the table based on an diff of the entire JSON content
-                if ( json[ dtSettings.liveAjax.dataSrc ][0][ dtSettings.liveAjax.rowId ] === undefined ){
+                if ( json[ dtSettings.liveAjax.dataSrc ][0] == null || json[ dtSettings.liveAjax.dataSrc ][0][ dtSettings.liveAjax.rowId ] === undefined ){
                     // Compare two dataSources, and just quit if they are the same
                     if ( JSON.stringify( dtSettings.liveAjax.previousJson[ dtSettings.liveAjax.dataSrc ] ) !== JSON.stringify( json[ dtSettings.liveAjax.dataSrc ] ) ) {
                         // Clear the table and re-add all rows
